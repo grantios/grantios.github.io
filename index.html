@@ -399,7 +399,7 @@
             border-radius: 8px;
             padding: 1.5rem;
             margin: 2rem auto;
-            max-width: 800px;  
+            max-width: 1000px;  
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
         }
 
@@ -440,6 +440,18 @@
 
         .specialized-variants[open] > *:not(summary) {
             margin-top: 1.5rem;
+        }
+
+        .variants-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .variants-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         .code-copy {
@@ -713,6 +725,14 @@
             padding: 0 20px;
         }
 
+        .specialized-variants .command-banner-wrapper {
+            margin-top: 0.5rem;
+        }
+
+        .variant-item p {
+            margin-bottom: 0.25rem;
+        }
+
         .command-banner-box {
             background: #0b0b0b;  
             color: #ffffff;
@@ -804,7 +824,7 @@
 <p><strong>Desktop (Via KDE):</strong></p>
 <div class="command-banner-wrapper" aria-hidden="false">
   <div class="command-banner-box" role="status" aria-label="desktop installation command">
-    <code>./insta/run.sh</code>
+    <code>./insta/run.sh --config workstation</code>
   </div>
 </div>
 <p><strong>Server (Headless):</strong></p>
@@ -815,17 +835,39 @@
 </div>
 <details class="specialized-variants">
 <summary><strong>Specialized Variants</strong></summary>
+<div class="variants-grid">
+<div class="variant-item">
 <p><strong>Smart Clock (Godot App):</strong></p>
 <div class="command-banner-wrapper" aria-hidden="false">
   <div class="command-banner-box" role="status" aria-label="clock installation command">
     <code>./insta/run.sh --config smartclock.sh</code>
   </div>
 </div>
+</div>
+<div class="variant-item">
 <p><strong>Media Center (Kodi HTPC):</strong></p>
 <div class="command-banner-wrapper" aria-hidden="false">
   <div class="command-banner-box" role="status" aria-label="media installation command">
     <code>./insta/run.sh --config mediacenter.sh</code>
   </div>
+</div>
+</div>
+<div class="variant-item">
+<p><strong>Steamdeck (Quickshell Heavy):</strong></p>
+<div class="command-banner-wrapper" aria-hidden="false">
+  <div class="command-banner-box" role="status" aria-label="media installation command">
+    <code>./insta/run.sh --config steamdeck.sh</code>
+  </div>
+</div>
+</div>
+<div class="variant-item">
+<p><strong>Devestation (Dev-First Desktop):</strong></p>
+<div class="command-banner-wrapper" aria-hidden="false">
+  <div class="command-banner-box" role="status" aria-label="media installation command">
+    <code>./insta/run.sh --config devestation.sh</code>
+  </div>
+</div>
+</div>
 </div>
 </details>
 <p>* <code>Then reboot to stage the changes.</code></p>
